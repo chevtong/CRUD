@@ -8,6 +8,8 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 
+session_start();
+
 // Load you classes
 require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
@@ -16,6 +18,10 @@ require_once 'classes/CardRepository.php';
 echo "<b>POST</b> <br>";
 var_dump($_POST);
 echo " <br>";
+echo "<b>SESSION</b> <br>";
+var_dump($_SESSION);
+echo " <br>";
+
 
 //TODO: need too move the pwd n username in config
 $database= new DatabaseManager($config["host"],$config["user"], $config["password"]);
@@ -39,6 +45,14 @@ if(!empty($_POST["submit"]) && !empty($_POST["name"]) && !empty($_POST["origin"]
 if(!empty($_POST["delete"])){
     $card->delete();
 }
+
+if(!empty($_POST["edit"])){
+    $card->update();
+}
+
+if(!empty($_POST["update"])){
+   $card->update2();
+ }
 
 
 
