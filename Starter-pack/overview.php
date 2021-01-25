@@ -15,8 +15,17 @@
 
 
 <?php foreach($card->allData as $data){?>
-   <li><?php echo $data["name"] . " - " . $data["origin"] . "<br>";?></li>
-      <?php   }?>
+   <li>
+   		<?php echo $data["name"] . " - " . $data["origin"] . "<br>";?>
+
+		<form action="" method="post">
+
+			<button name="edit" value="<?php echo $data["id"]; ?>">EDIT</button>
+			<button name="delete" value="<?php echo $data["id"]; ?>">DELETE</button>
+
+		</form>	
+   </li>
+      <?php }?>
 </ul>
 
 <form action="" method="post">
@@ -25,7 +34,7 @@
 <label>Origin</label>
 <input type="text" name="origin" id="">
 
-<button type="submit">Add</button>
+<button type="submit" name="submit" value="submit">Add</button>
 </form>
 
 </body>

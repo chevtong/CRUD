@@ -26,11 +26,9 @@ class CardRepository extends DatabaseManager
         //the execute method requires array with the values
         $stmt->execute([$name,$origin]);
 
-
         $_POST["name"]=$_POST["origin"]="";
 
         $this->get();
-
     }
 
     // Get one
@@ -56,20 +54,6 @@ class CardRepository extends DatabaseManager
 
         $this->allData = $stmt->fetchAll();
 
-        
-
-
-        // while($this->rows = $stmt->fetch()){
-
-        // var_dump($this->rows);
-        // echo "<br>"; 
-            
-        // }
-       
-        // while($row = $stmt->fetch()){
-        //     echo $row["name"]." ". $row["origin"]."<br>"; 
-        // }
-
     }
 
     public function update()
@@ -79,7 +63,21 @@ class CardRepository extends DatabaseManager
 
     public function delete()
     {
+        $deleteId = $_POST["delete"];
+    
 
+        //first create a sql 
+        $sql="DELETE FROM apples WHERE id=?";
+
+        //prepare the statement
+        $stmt = $this->connect()->prepare($sql);
+                
+        //the execute method requires array with the values
+        $stmt->execute([$deleteId]);
+
+        //$_POST["name"]=$_POST["origin"]="";
+
+        $this->get();
     }
 
 }

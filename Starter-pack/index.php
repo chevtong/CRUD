@@ -32,8 +32,12 @@ $card->get();
 
 
 
-if(!empty($_POST)){
+if(!empty($_POST["submit"]) && !empty($_POST["name"]) && !empty($_POST["origin"])){
     $card->create();
+}
+
+if(!empty($_POST["delete"])){
+    $card->delete();
 }
 
 
