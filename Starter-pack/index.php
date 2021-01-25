@@ -13,13 +13,30 @@ require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
 require_once 'classes/CardRepository.php';
 
-$databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password']);
-$databaseManager->connect();
+echo "<b>POST</b> <br>";
+var_dump($_POST);
+echo " <br>";
 
-// This example is about a Pokémon card collection
-// Update the naming if you'd like to work with another collection
-$cardRepository = new CardRepository($databaseManager);
-$cards = $cardRepository->get();
+//TODO: need too move the pwd n username in config
+$database= new DatabaseManager($config["host"],$config["user"], $config["password"]);
+echo "<b>DATABASE</b> <br>";
+var_dump($database);
+echo " <br>";
+
+
+$card = new CardRepository($config["host"],$config["user"], $config["password"]);
+echo "<b>CARD</b> <br>";
+var_dump($card);
+echo "<br>";
+$card->get();
+
+
+
+if(!empty($_POST)){
+    $card->create();
+}
+
+
 
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view

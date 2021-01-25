@@ -12,10 +12,17 @@
 <h1>Goodcard - track your collection of Pokémon cards</h1>
 
 <ul>
-<?php foreach ($cards as $card) : ?>
-    <li><?= $card['name'] ?></li>
-<?php endforeach; ?>
+
 </ul>
+
+<form action="" method="post">
+<label>Name</label>
+<input type="text" name="name" id="">
+<label>Origin</label>
+<input type="text" name="origin" id="">
+
+<button type="submit">Add</button>
+</form>
 
 </body>
 </html>

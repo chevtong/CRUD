@@ -12,14 +12,36 @@ class DatabaseManager
     // We could also use a private variable and a getter (but let's not make things too complicated at this point)
     public $database;
 
-    public function __construct(string $host, string $name, string $password)
+   
+
+    public function __construct($host, $name, $password)
     {
         // TODO: Set any user and password information
+        $this->host = $host;
+        $this->name = $name;
+        $this->password = $password;
+  
+
     }
 
     public function connect()
     {
         // TODO: make the connection to the database
-        $this->database = null;
+
+        $this->database = "collection";
+
+        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->database;
+        
+        //create the pdo connection
+        $pdo = new PDO($dsn, $this->name, $this->password);
+
+        //set default attribute to get the data
+        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+        return $pdo; 
     }
+
+  
+
+    //this database manager is working fine
 }
