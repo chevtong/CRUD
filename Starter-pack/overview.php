@@ -13,6 +13,10 @@
 
 <ul>
 
+
+<?php foreach($card->allData as $data){?>
+   <li><?php echo $data["name"] . " - " . $data["origin"] . "<br>";?></li>
+      <?php   }?>
 </ul>
 
 <form action="" method="post">

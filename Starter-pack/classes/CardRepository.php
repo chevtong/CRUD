@@ -9,23 +9,28 @@ class CardRepository extends DatabaseManager
 
     // // This class needs a database connection to function
  
+    public $allData;
 
     public function create()
     {
         $name = $_POST["name"];
         $origin =$_POST["origin"];
 
-                //first create a sql 
-                $sql="INSERT INTO apples(name, origin) 
-                VALUES(?,?) ";
-        
-                //prepare the statement
-                $stmt = $this->connect()->prepare($sql);
-                        
-                //the execute method requires array with the values
-                $stmt->execute([$name,$origin]);
-        
-            
+        //first create a sql 
+        $sql="INSERT INTO apples(name, origin) 
+        VALUES(?,?) ";
+
+        //prepare the statement
+        $stmt = $this->connect()->prepare($sql);
+                
+        //the execute method requires array with the values
+        $stmt->execute([$name,$origin]);
+
+
+        $_POST["name"]=$_POST["origin"]="";
+
+        $this->get();
+
     }
 
     // Get one
@@ -49,10 +54,17 @@ class CardRepository extends DatabaseManager
 
         $stmt = $this->connect()->query($sql);
 
-        while($row = $stmt->fetch()){
-            var_dump($row); 
-            echo "<br>";
-        }
+        $this->allData = $stmt->fetchAll();
+
+        
+
+
+        // while($this->rows = $stmt->fetch()){
+
+        // var_dump($this->rows);
+        // echo "<br>"; 
+            
+        // }
        
         // while($row = $stmt->fetch()){
         //     echo $row["name"]." ". $row["origin"]."<br>"; 
