@@ -17,18 +17,6 @@ if(!empty($_POST["submit"]) && !empty($_POST["name"]) && !empty($_POST["origin"]
     $cards=$cardRepository->get();
 }
 
-if(!empty($_GET["delete"])){
-    $cardRepository->delete();
-
-    $cards=$cardRepository->get();
-}
-
-
-
-if(!empty($_GET["edit"])){
-  
-    $cardRepository->update();
-}
 
 
 // Load your view

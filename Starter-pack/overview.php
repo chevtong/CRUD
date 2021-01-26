@@ -20,9 +20,9 @@
         <?php echo $card["name"] . " - ";
 				echo $card["origin"] . "<br>"; ?>
 
-				<a href="index.php?edit=<?php echo $card["id"]?>">edit</a>
+				<a href="edit.php?id=<?php echo $card["id"]?>">edit</a>
 
-				<a href="delete.php?delete=<?php echo $card["id"]?>">delete</a>
+				<a href="delete.php?id=<?php echo $card["id"]?>">delete</a>
 
 			</form>
 		</li>
