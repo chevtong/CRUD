@@ -16,62 +16,63 @@ class CardRepository
 
     public function create()
     {
+        //set variables for the values needed
         $name = $_POST["name"];
         $origin = $_POST["origin"];
 
-         //first create a sql 
-         $sql="INSERT INTO apples(name, origin) 
-         VALUES(?,?) ";
+        //create the sql 
+        $sql="INSERT INTO apples(name, origin) VALUES(?,?) ";
  
         //prepare the statement
         $result = $this->databaseManager->database->prepare($sql);
 
-         //the execute method requires array with the values
-         $result->execute([$name,$origin]);
-
-         //give back the empty value in POST to avoid the submission again
-         $_POST["name"]=$_POST["origin"]="";
- 
+        //the execute method requires array with the values
+        $result->execute([$name,$origin]);
     }
 
     // Get one
     public function find()
     {
+        //set variables for the values needed
         $dataId = $_GET["id"];
-
         
+        //create the sql
         $sql="SELECT * FROM apples WHERE id=?";
-  
+
+        //prepare the connection
         $result = $this->databaseManager->database->prepare($sql);
 
-        //the execute method requires array with the values
+        //the execute method 
         $result->execute([$dataId]);
 
+        //need to return for this result in order to show in array
         return $result;
-
     }
 
-    // Get all
+    // Get all - will be loaded with the index page
     public function get()
     {
-            // We get the database connection first, so we can apply our queries with it
-        // return $this->databaseManager->database-> (runYourQueryHere)
+        //create sql
         $sql = "SELECT * FROM apples";
+
+        //connect to the database with query(), not neccessary to prepare then execute here since no info input 
         $result = $this->databaseManager->database->query($sql);
 
+        //need to return for this result in order to show in array on overview.php
         return $result;
     }
    
 
     public function update()
     {
-       
-            // //TODO: add delete alert 
+            // //TODO: add delete alert
+            
+            //get values by setting variables
             $dataId = $_GET["id"];
             $name = $_POST["name"];
             $origin = $_POST["origin"];
         
-            //first create a sql 
+            //create a sql 
             $sql="UPDATE apples
             SET name = ?, origin=?
             WHERE id = ?";
@@ -82,14 +83,16 @@ class CardRepository
             //the execute method requires array with the values
             $result->execute([$name,$origin,$dataId]);
 
+            //return the page to index
             header('Location: index.php');
-
     }
 
     public function delete()
     {
       
             // //TODO: add delete alert 
+
+            //get values by setting variables
             $dataId = $_GET["id"];
         
             //first create a sql 
@@ -102,7 +105,5 @@ class CardRepository
             $result->execute([$dataId]);
 
             header('Location: index.php');
- 
     }
-
 }

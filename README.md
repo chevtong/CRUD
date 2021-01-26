@@ -1,5 +1,5 @@
 # Create, read, update and delete
-
+<!-- 
 - Repository: `crud`
 - Type of Challenge: `Learning`
 - Duration: `3 days`
@@ -44,4 +44,4 @@ Bonus rounds:
 
 ![](https://media.giphy.com/media/l3V0mgFspVuDAJK9y/giphy.gif)
 
-Sorry, best I could find...
+Sorry, best I could find... -->

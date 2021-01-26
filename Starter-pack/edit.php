@@ -2,14 +2,10 @@
 
 require 'setup.php';
 
-//header('location:index.php');
-
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password']);
 $databaseManager->connect();
 
-
 $cardRepository = new CardRepository($databaseManager);
-
 
 $cards = $cardRepository->find();
 

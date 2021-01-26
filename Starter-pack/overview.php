@@ -33,24 +33,17 @@
 		
 	<form action="" method="post">
 		<label>Name</label>
-		<input type="text" name="name" placeholder="Apple's Type" value="<?php if(!empty($_GET["edit"])){
-			echo $card["name"];} //change value to the selected data when update btn is clicked?>">
+		<input type="text" name="name" placeholder="Apple's Type">
 
 
 		<label>Origin</label>
-		<input type="text" name="origin" placeholder="Origin Country" value="<?php  if(!empty($_GET["edit"])){
-			echo $card["origin"];} //change value to the selected data when update btn is clicked ?>">
+		<input type="text" name="origin" placeholder="Origin Country">
 		
-		<?php if(!empty($_GET["edit"])){
-		//name of btn change to update instead of submit in POST, to call out edit() on index.php?>
-		 <button type="update" name="update" value="update">UPDATE</button> 
-		
-		
-		<?php  } else { ?>
+	
 
 			<button type="submit" name="submit" value="submit">SUBMIT</button>
 
-		<?php  }?> 
+		
 	</form>
 
 
