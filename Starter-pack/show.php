@@ -11,12 +11,12 @@ $cardRepository = new CardRepository($databaseManager);
 //instead of using get(), use find() to show only one specific data row 
 $cards = $cardRepository->find();
 
-//when the confirm btn is clicked, there will be POST value and execute the delete()
-if(!empty($_POST["confirmDelete"])){
-    $cardRepository->delete();
+if(!empty($_POST["return"])){
+    header("Location:index.php");
 }
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -29,8 +29,9 @@ if(!empty($_POST["confirmDelete"])){
 
 <body>
 
+
     <ul>
-        <!-- display the selected data in a foreach loop -->
+        <!-- display all data in a foreach loop -->
         <?php foreach($cards as $card){ ?>
         <li>
             <?php echo $card["name"] . " - ";
@@ -41,13 +42,15 @@ if(!empty($_POST["confirmDelete"])){
         <?php }?>
     </ul>
 
+
     <form action="" method="post">
-        SURE?
-        <button type="submit" name="confirmDelete" value="confirmDelete">Confirm</button>
+
+
+
+        <button type="return" name="return" value="return">HOME</button>
 
     </form>
 
-    <div class="background"></div>
 </body>
 
 </html>
