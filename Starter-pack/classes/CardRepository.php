@@ -6,7 +6,7 @@
 class CardRepository
 {
     private $databaseManager;
-    public $allData;
+    public $id;
 
     // This class needs a database connection to function
     public function __construct(DatabaseManager $databaseManager)
@@ -23,8 +23,8 @@ class CardRepository
          $sql="INSERT INTO apples(name, origin) 
          VALUES(?,?) ";
  
-       //prepare the statement
-       $result = $this->databaseManager->database->prepare($sql);
+        //prepare the statement
+        $result = $this->databaseManager->database->prepare($sql);
 
          //the execute method requires array with the values
          $result->execute([$name,$origin]);
@@ -32,7 +32,6 @@ class CardRepository
          //give back the empty value in POST to avoid the submission again
          $_POST["name"]=$_POST["origin"]="";
  
-         
     }
 
     // Get one
@@ -51,17 +50,22 @@ class CardRepository
 
         return $result;
     }
+    public function prepareUpdate()
+    {
+       // $_POST["edit"] = 
+       
+    }
 
     public function update()
     {
-
+        echo "update function";
     }
 
     public function delete()
     {
        
             //TODO: add delete alert 
-            $deleteId = $_POST["delete"];
+            $deleteId = $_GET["delete"];
         
             //first create a sql 
             $sql="DELETE FROM apples WHERE id=?";

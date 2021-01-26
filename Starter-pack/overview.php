@@ -20,11 +20,9 @@
         <?php echo $card["name"] . " - ";
 				echo $card["origin"] . "<br>"; ?>
 
-			<form method="post">
+				<a href="edit.php?edit=<?php echo $card["id"]?>">edit</a>
 
-				<!-- use another form to get POST value(with data.id) with the clicked btn -->
-				<button name="delete" value="<?php echo $card["id"]; ?>">delete</button>
-				<button name="edit" value="<?php echo $card["id"]; ?>">Edit</button>
+				<a href="delete.php?delete=<?php echo $card["id"]?>">delete</a>
 
 			</form>
 		</li>
@@ -35,22 +33,24 @@
 		
 	<form action="" method="post">
 		<label>Name</label>
-		<input type="text" name="name" placeholder="Apple's Type" value="<?php //if(!empty($card->updateData)){
-			//echo $card->updateData["name"];} //change value to the selected data when update btn is clicked?>">
+		<input type="text" name="name" placeholder="Apple's Type" value="<?php if(!empty($_POST["edit"])){
+			echo $card["name"];} //change value to the selected data when update btn is clicked?>">
+
+
 		<label>Origin</label>
-		<input type="text" name="origin" placeholder="Origin Country" value="<?php //if(!empty($card->updateData)){
-			//echo $card->updateData["origin"];} //change value to the selected data when update btn is clicked ?>">
+		<input type="text" name="origin" placeholder="Origin Country" value="<?php  if(!empty($_POST["edit"])){
+			echo $card["origin"];} //change value to the selected data when update btn is clicked ?>">
 		
-		<?php //if(!empty($card->updateData)){ 
+		<?php if(!empty($_POST["edit"])){
 		//name of btn change to update instead of submit in POST, to call out edit() on index.php?>
-		<!-- <button type="update" name="update" value="update">UPDATE</button> -->
+		 <button type="update" name="update" value="update">UPDATE</button> 
 		
 		
-		<?php // } else { ?>
+		<?php  } else { ?>
 
 			<button type="submit" name="submit" value="submit">SUBMIT</button>
 
-		<?php  //}?> 
+		<?php  }?> 
 	</form>
 
 
