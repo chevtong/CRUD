@@ -20,7 +20,7 @@
         <?php echo $card["name"] . " - ";
 				echo $card["origin"] . "<br>"; ?>
 
-				<a href="edit.php?edit=<?php echo $card["id"]?>">edit</a>
+				<a href="index.php?edit=<?php echo $card["id"]?>">edit</a>
 
 				<a href="delete.php?delete=<?php echo $card["id"]?>">delete</a>
 
@@ -33,15 +33,15 @@
 		
 	<form action="" method="post">
 		<label>Name</label>
-		<input type="text" name="name" placeholder="Apple's Type" value="<?php if(!empty($_POST["edit"])){
+		<input type="text" name="name" placeholder="Apple's Type" value="<?php if(!empty($_GET["edit"])){
 			echo $card["name"];} //change value to the selected data when update btn is clicked?>">
 
 
 		<label>Origin</label>
-		<input type="text" name="origin" placeholder="Origin Country" value="<?php  if(!empty($_POST["edit"])){
+		<input type="text" name="origin" placeholder="Origin Country" value="<?php  if(!empty($_GET["edit"])){
 			echo $card["origin"];} //change value to the selected data when update btn is clicked ?>">
 		
-		<?php if(!empty($_POST["edit"])){
+		<?php if(!empty($_GET["edit"])){
 		//name of btn change to update instead of submit in POST, to call out edit() on index.php?>
 		 <button type="update" name="update" value="update">UPDATE</button> 
 		

@@ -37,6 +37,17 @@ class CardRepository
     // Get one
     public function find()
     {
+        $dataId = $_GET["delete"];
+
+        
+        $sql="SELECT * FROM apples WHERE id=?";
+  
+        $result = $this->databaseManager->database->prepare($sql);
+
+        //the execute method requires array with the values
+        $result->execute([$dataId]);
+
+        return $result;
 
     }
 
@@ -58,14 +69,14 @@ class CardRepository
 
     public function update()
     {
-        echo "update function";
+       
     }
 
     public function delete()
     {
-       
-            //TODO: add delete alert 
-            $deleteId = $_GET["delete"];
+      
+            // //TODO: add delete alert 
+            $dataId = $_GET["delete"];
         
             //first create a sql 
             $sql="DELETE FROM apples WHERE id=?";
@@ -74,7 +85,9 @@ class CardRepository
             $result = $this->databaseManager->database->prepare($sql);
                     
             //the execute method requires array with the values
-            $result->execute([$deleteId]);
+            $result->execute([$dataId]);
+
+            header('Location: index.php');
  
     }
 
