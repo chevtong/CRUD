@@ -12,36 +12,33 @@ class DatabaseManager
     // We could also use a private variable and a getter (but let's not make things too complicated at this point)
     public $database;
 
-   
-
-    public function __construct($host, $name, $password)
+    public function __construct(string $host, string $name, string $password)
     {
-        // TODO: Set any user and password information
         $this->host = $host;
         $this->name = $name;
         $this->password = $password;
-  
-
+        $this->database = "collection";
+        // TODO: move the database to config.php??
     }
 
     public function connect()
     {
-        // TODO: make the connection to the database
+        try{
+            
+            //use $dsn for just clearer view
+            $dsn = "mysql:host=$this->host;dbname=$this->database;";
 
-        $this->database = "collection";
+            //PDO require the dsn, username and password
+            $this->database = new PDO($dsn, $this->name, $this->password);
 
-        $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->database;
+            //TODO: check 
+            $this->database->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+
+        } catch (PDOException $exception) { //to get error if connection failed
+            
+           echo "Connection Error - " . $exception->getMessage();
+        }
+
         
-        //create the pdo connection
-        $pdo = new PDO($dsn, $this->name, $this->password);
-
-        //set default attribute to get the data
-        $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-        return $pdo; 
     }
-
-  
-
-    //this database manager is working fine
 }
