@@ -29,6 +29,8 @@ if(!empty($_POST["confirmDelete"])){
 
 <body>
 
+<h1>Delete the apple's information</h1>
+
     <ul>
         <!-- display the selected data in a foreach loop -->
         <?php foreach($cards as $card){ ?>

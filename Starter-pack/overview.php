@@ -46,6 +46,8 @@
 
 
             <form action="" method="post">
+
+				TO ADD A New Type of Apple <br>
                 <label>Name</label>
                 <input type="text" name="name" placeholder="Apple's Type">
 

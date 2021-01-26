@@ -31,7 +31,7 @@ if(!empty($_POST["update"])){
 
 <body>
 
-
+    <h1>Edit the apple's information</h1>
     <ul>
         <!-- display all data in a foreach loop -->
         <?php foreach($cards as $card){ ?>

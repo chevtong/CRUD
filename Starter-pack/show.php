@@ -29,16 +29,18 @@ if(!empty($_POST["return"])){
 
 <body>
 
+<h1>The Apple's Details</h1>
 
     <ul>
         <!-- display all data in a foreach loop -->
         <?php foreach($cards as $card){ ?>
-        <li>
-            <?php echo $card["name"] . " - ";
-				echo $card["origin"] . "<br>"; ?>
+        <li>Name: 
+            <?php echo $card["name"]; ?>
 
 
         </li>
+        <li>Origin: <?php echo $card["origin"];?></li>
+        <li>Data input on: <?php echo $card["entered_at"];?></li>
         <?php }?>
     </ul>
 
