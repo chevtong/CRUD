@@ -17,11 +17,11 @@ require_once 'classes/DatabaseManager.php';
 require_once 'classes/CardRepository.php';
 
 // To help to build functions
-echo "<b>POST</b><br>";
-echo "<pre>";
-var_dump($_POST);
-echo "</pre>";
-echo "<b>GET</b><br>";
-echo "<pre>";
-var_dump($_GET);
-echo "</pre>";
+// echo "<b>POST</b><br>";
+// echo "<pre>";
+// var_dump($_POST);
+// echo "</pre>";
+// echo "<b>GET</b><br>";
+// echo "<pre>";
+// var_dump($_GET);
+// echo "</pre>";

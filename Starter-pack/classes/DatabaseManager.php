@@ -17,8 +17,7 @@ class DatabaseManager
         $this->host = $host;
         $this->name = $name;
         $this->password = $password;
-        $this->database = "collection";
-        // TODO: move the database to config.php??
+        
     }
 
     public function connect()
@@ -26,12 +25,11 @@ class DatabaseManager
         try{
             
             //use $dsn for just clearer view
-            $dsn = "mysql:host=$this->host;dbname=$this->database;";
+            $dsn = "mysql:host=$this->host;dbname=collection;";
 
             //PDO require the dsn, username and password
             $this->database = new PDO($dsn, $this->name, $this->password);
 
-            //TODO: check 
             $this->database->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
         } catch (PDOException $exception) { //to get error if connection failed

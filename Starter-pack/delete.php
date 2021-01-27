@@ -24,7 +24,8 @@ if(!empty($_POST["confirmDelete"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+    <title>AppleDay - the Real Apple Collection</title>
 </head>
 
 <body>
@@ -37,8 +38,6 @@ if(!empty($_POST["confirmDelete"])){
         <li>
             <?php echo $card["name"] . " - ";
 				echo $card["origin"] . "<br>"; ?>
-
-
         </li>
         <?php }?>
     </ul>

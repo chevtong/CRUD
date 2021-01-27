@@ -26,7 +26,9 @@ if(!empty($_POST["update"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style/style.css">
+
+    <title>AppleDay - the Real Apple Collection</title>
 </head>
 
 <body>
@@ -60,6 +62,7 @@ if(!empty($_POST["update"])){
 
     </form>
 
+    <div class="background"></div>
 </body>
 
 </html>

@@ -24,8 +24,9 @@ if(!empty($_POST["return"])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    <link rel="stylesheet" href="style/style.css">
+    <title>AppleDay - the Real Apple Collection</title>
+    </head>
 
 <body>
 
@@ -52,6 +53,8 @@ if(!empty($_POST["return"])){
         <button type="return" name="return" value="return">HOME</button>
 
     </form>
+
+    <div class="background"></div>
 
 </body>
 

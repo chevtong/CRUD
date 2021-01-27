@@ -1,31 +1,85 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-/* body{
-    
-} */
-li{
-    background-color: #EEE;
-    margin: 1rem;
-    display: grid;
-    grid-template-columns: 80% 5% 5% 5%;
-    
-}
-.background{
-    background-image: url("apple.jfif");
-    width: 30vw;
-    height: 40vh;
 
-    background-size: cover;
-    background-position: center;
+body {
+  font-family: "Poppins", sans-serif;
+  color: #679b9b;
 }
-.container{
-    
-    width: 80%;
-    margin: auto;
+input {
+  outline: none;
+  background-color: #ffeadb;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+form {
+  background-color: #f7c5a8;
+  border-radius: 8px;
+  color: #ffeadb;
+  padding: 0.4rem 1rem;
+}
+button {
+  background-color: #679b9b;
+  outline: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  border-radius: 50%;
+  width: 3.2rem;
+  height: 3.2rem;
+  color: #ffeadb;
+}
+button:hover {
+  background-color: #ffeadb;
+  color: #679b9b;
+}
+ul {
+  margin-top: 1rem;
+  border: 3px solid #ffeadb;
+  border-radius: 13px;
+}
+li {
+  background-color: #ffeadb;
+  margin: 1rem;
+  display: grid;
+  grid-template-columns: 70% 10% 10% 10%;
+  grid-gap: 0.2rem;
+  background-color: #ffeadb;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  color: #679b9b;
+}
+i {
+  color: #679b9b;
+}
+i:hover {
+  color: #ff9a76;
+}
+h1 {
+  color: #679b9b;
+  font-size: 5rem;
+}
+
+.container {
     display: grid;
     grid-template-columns: 50% 50%;
-    
+    width: 70%;
+    margin: 3rem auto;
+    grid-gap: 4rem;
+    align-items: center;
+}
+
+.background {
+  background-image: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url("apple.jfif");
+  min-height: 60vh;
+  border-radius: 13px;
+  background-size: cover;
+  background-position: center;
+}
+
+.input-form {
+  grid-column: 1/3;
+  justify-self: center;
 }
