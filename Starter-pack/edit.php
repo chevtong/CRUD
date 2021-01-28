@@ -62,7 +62,7 @@ if(!empty($_POST["update"])){
 
     </form>
 
-    <div class="background"></div>
+    
 </body>
 
 </html>

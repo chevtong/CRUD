@@ -48,7 +48,7 @@ if(!empty($_POST["confirmDelete"])){
 
     </form>
 
-    <div class="background"></div>
+    
 </body>
 
 </html>

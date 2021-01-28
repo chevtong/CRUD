@@ -54,7 +54,7 @@ if(!empty($_POST["return"])){
 
     </form>
 
-    <div class="background"></div>
+    
 
 </body>
 
