@@ -21,7 +21,9 @@ Step 4: delete
 - removing record from database.
 <br>
 ---
+
 ### Tools:
+
 - Php
 - SQL
 - Xampp
