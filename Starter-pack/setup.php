@@ -1,8 +1,4 @@
 <?php
-//Here are all the requirements for all the html pages, index/delete/edit.php
-//When gathering everything together, it is easier to require just 1 file instead of 20 lines in each files. 
-
-
 // Require the correct variable type to be used (no auto-converting)
 declare(strict_types = 1);
 

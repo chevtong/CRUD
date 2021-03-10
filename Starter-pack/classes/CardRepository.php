@@ -1,8 +1,5 @@
 <?php
 
-// This class is focussed on dealing with queries for one type of data
-// That allows for easier re-using and it's rather easy to find all your queries
-// This technique is called the repository pattern
 class CardRepository
 {
     private $databaseManager;
@@ -30,7 +27,6 @@ class CardRepository
         $result->execute([$name,$origin]);
     }
 
-    // Get one
     public function find()
     {
         //set variables for the values needed
@@ -64,9 +60,7 @@ class CardRepository
    
 
     public function update()
-    {
-            // //TODO: add delete alert
-            
+    {            
             //get values by setting variables
             $dataId = $_GET["id"];
             $name = $_POST["name"];
@@ -89,9 +83,6 @@ class CardRepository
 
     public function delete()
     {
-      
-            // //TODO: add delete alert 
-
             //get values by setting variables
             $dataId = $_GET["id"];
         

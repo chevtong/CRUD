@@ -15,10 +15,7 @@ $cards = $cardRepository->find();
 if(!empty($_POST["update"])){
     $cardRepository->update();
 }
-
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,12 +24,10 @@ if(!empty($_POST["update"])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-
     <title>AppleDay - the Real Apple Collection</title>
 </head>
 
 <body>
-
     <h1>Edit the apple's information</h1>
     <ul>
         <!-- display all data in a foreach loop -->
@@ -40,8 +35,6 @@ if(!empty($_POST["update"])){
         <li>
             <?php echo $card["name"] . " - ";
 				echo $card["origin"] . "<br>"; ?>
-
-
         </li>
         <?php }?>
     </ul>
@@ -51,18 +44,11 @@ if(!empty($_POST["update"])){
         <label>Name</label>
         <input type="text" name="name" placeholder="Apple's Type" value="<?php if(!empty($_GET["id"])){
 			echo $card["name"];} //change value to the selected data?>">
-
-
         <label>Origin</label>
         <input type="text" name="origin" placeholder="Origin Country" value="<?php  if(!empty($_GET["id"])){
 			echo $card["origin"];}//change value to the selected data  ?>">
-
-
         <button type="update" name="update" value="update">UPDATE</button>
-
     </form>
 
-    
 </body>
-
 </html>

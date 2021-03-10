@@ -15,7 +15,6 @@ $cards = $cardRepository->find();
 if(!empty($_POST["confirmDelete"])){
     $cardRepository->delete();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -47,7 +46,6 @@ if(!empty($_POST["confirmDelete"])){
         <button type="submit" name="confirmDelete" value="confirmDelete">Confirm</button>
     </form>
 
-    
 </body>
 
 </html>

@@ -14,9 +14,7 @@ $cards = $cardRepository->find();
 if(!empty($_POST["return"])){
     header("Location:index.php");
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,8 +24,7 @@ if(!empty($_POST["return"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
     <title>AppleDay - the Real Apple Collection</title>
-    </head>
-
+</head>
 <body>
 
 <h1>The Apple's Details</h1>
@@ -37,25 +34,15 @@ if(!empty($_POST["return"])){
         <?php foreach($cards as $card){ ?>
         <li>Name: 
             <?php echo $card["name"]; ?>
-
-
         </li>
         <li>Origin: <?php echo $card["origin"];?></li>
         <li>Data input on: <?php echo $card["entered_at"];?></li>
         <?php }?>
     </ul>
 
-
     <form action="" method="post">
-
-
-
         <button type="return" name="return" value="return">HOME</button>
-
     </form>
 
-    
-
 </body>
-
 </html>

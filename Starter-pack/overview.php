@@ -12,27 +12,18 @@
         integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <link rel="stylesheet" href="style/style.css">
     <title>AppleDay - the Real Apple Collection</title>
-    <style>
-
-
-    </style>
 </head>
 
 <body>
     <div class="container">
-    <div class="input-form">
-    <p class="topic"> ADD A New Type of Apple</p> 
+        <div class="input-form">
+            <p class="topic"> ADD A New Type of Apple</p>
             <form action="" method="post">
-                
-
-                    <label>Name</label>
+                <label>Name</label>
                 <input type="text" name="name" placeholder="Apple's Type">
-
                 <label>Origin</label>
                 <input type="text" name="origin" placeholder="Origin Country">
-
                 <button type="submit" name="submit" value="submit">SUBMIT</button>
-
             </form>
         </div>
         <div class="content">
@@ -42,38 +33,20 @@
             <ul>
                 <!-- display all data in a foreach loop -->
                 <?php foreach($cards as $card){ ?>
-
                 <li>
-
-                    <p>
-
-                        <?php echo $card["name"] . " - ";
-				echo $card["origin"] . "<br>"; ?>
+                    <p><?php echo $card["name"] . " - ";
+				        echo $card["origin"] . "<br>"; ?>
                     </p>
-
-                    <!-- TODO: add tooltip  -->
                     <a href="show.php?id=<?php echo $card["id"]?>"><i class="fas fa-info-circle"></i></a>
-
                     <a href="edit.php?id=<?php echo $card["id"]?>"><i class="fas fa-pen"></i></a>
                     <a href="delete.php?id=<?php echo $card["id"]?>"><i class="fas fa-trash-alt"></i></a>
-
-
                 </li>
-
                 <?php }?>
             </ul>
-
-
-
-
         </div>
 
         <div class="background"></div>
-
-        
     </div>
 
-
 </body>
-
 </html>
