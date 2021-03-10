@@ -23,20 +23,14 @@ class DatabaseManager
     public function connect()
     {
         try{
-            
-            //use $dsn for just clearer view
-            $dsn = "mysql:host=$this->host;dbname=collection;";
+            $dsn = "mysql:host=localhost;dbname=collection";
+            $conn = new PDO($dsn, $this->name, $this->password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->database =$conn;
 
-            //PDO require the dsn, username and password
-            $this->database = new PDO($dsn, $this->name, $this->password);
-
-            $this->database->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-
-        } catch (PDOException $exception) { //to get error if connection failed
-            
-           echo "Connection Error - " . $exception->getMessage();
+           
+        }catch (PDOExpeption $e){
+            echo "connection failed".$e->getMessage();
         }
-
-        
     }
 }

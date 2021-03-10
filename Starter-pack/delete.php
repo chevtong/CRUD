@@ -45,7 +45,6 @@ if(!empty($_POST["confirmDelete"])){
     <form action="" method="post">
         SURE?
         <button type="submit" name="confirmDelete" value="confirmDelete">Confirm</button>
-
     </form>
 
     
